@@ -1,205 +1,193 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
-@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
-
-@font-face {
-    font-family: "Booter - Zero Zero";
-    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
-         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-
+/* Reset styles */
 * {
-    box-sizing: border-box;
-    font-family: Raleway;
-    color: #777;
-}
-
-html, body {
     margin: 0;
     padding: 0;
-    min-height: 100%;
+    box-sizing: border-box;
 }
 
-
-
-.nav ul {
-    margin: 0;
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    color: #333;
 }
 
-.nav li {
-    display: inline;
+/* Container for content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
-.nav a {
+/* Header styles */
+header {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 60px 0;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation styles */
+nav {
+    margin: 30px 0;
+}
+
+nav a {
+    color: #4CAF50;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 100%;
+    width: 300%;
+    background: #4CAF50;
+    z-index: -1;
+    transition: all 0.5s;
+    transform: translateX(-50%) translateY(100%);
+}
+
+nav a:hover::before {
+    transform: translateX(-50%) translateY(0);
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Main content styles */
+main {
+    margin: 30px 0;
+}
+
+/* Image styles */
+img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+}
+
+h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #4CAF50;
+    margin-top: 10px;
+    transition: width 0.3s;
+}
+
+h2:hover::after {
+    width: 100px;
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+/* Button styles */
+.button {
     display: inline-block;
-    padding: .5em;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff6b6b, #f7b733);
     color: white;
     text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.main-nav {
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
+footer {
     text-align: center;
-    font-size: 1.1em;
-    font-weight: lighter;
-    border-bottom: 1px solid rgba(255, 255, 255, .3)
+    padding: 30px 0;
+    background: #333;
+    color: white;
+    border-radius: 0 0 20px 20px;
 }
 
-.main-nav li {
-    padding: 0 5%;
-}
-
-.nav a:hover {
-    background-color: rgba(255, 255, 255, .3)
-}
-
-.main-header {
-    background-color: rgba(0, 0, 0, .6);
-    background-image: url("Images/Header Background.jpg");
-    background-blend-mode: multiply;
-    background-size: cover;
-    padding-bottom: 30px;
-}
-
-.band-name {
-    text-align: center;
+footer p {
     margin: 0;
-    font-size: 4em;
-    font-family: "Booter - Zero Zero";
-    font-weight: normal;
-    color: white;
+    font-size: 0.9rem;
 }
 
-.band-name-large {
-    font-size: 8em;
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+    }
+
+    img {
+        border-radius: 10px;
+    }
 }
 
-.content-section {
-    margin: 1em;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5em;
-}
-.section-header {
-    font-family: "Metal Mania";
-    font-weight: normal;
-    color: #333;
-    text-align: center;
-    font-size: 2.5em;
-}
-
-.about-band-image {
-    float: left;
-    height: 200px;
-    width: 200px;
-    margin: 15px;
-    border-radius: 50%;
-}
-
-.main-footer {
-    background-color: #56CCF2;
-    color: white;
-    padding: .25em 0;
-}
-
-.main-footer-container {
-    display: flex;
-    align-items: center;
-}
-
-.main-footer-container ul {
-    flex-grow: 1;
-    text-align: end;
-}
-
-.footer-nav li {
-    padding: 0 .5em;
-}
-
-.footer-nav img {
-    width: 30px;
-    height: 30px;
-}
-
-.btn {
-    text-align: center;
-    vertical-align: middle;
-    padding: .67em .67em;
-    cursor: pointer;
-}
-
-.btn-header {
-    margin: .5em 15% 2em 15%;
-    color: white;
-    border: 2px solid #2D9CDB;
-    background-color: rgba(255, 255, 255, .1);
-    border-radius: 0;
-    font-size: 1.5em;
-    font-weight: lighter;
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-.btn-header:hover {
-    background-color: rgba(255, 255, 255, .3);
-}
-
-.btn-play {
-    display: block;
-    margin: 0 auto;
-    color: #2D9CDB;
-    font-size: 4em;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    padding: 0;
-    text-align: center;
-}
-
-.btn-primary {
-    color: white;
-    background-color: #56CCF2;
-    border: none;
-    border-radius: .3em;
-    font-weight: bold;
-}
-
-.btn-primary:hover {
-    background-color: #2D9CDB;
-}
-
-.tour-row {
-    border-bottom: 1px solid black;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-}
-
-.tour-row:last-child {
-    border: none;
-}
-
-.tour-item {
-    display: inline-block;
-    padding-right: .5em;
-}
-
-.tour-date {
-    color: #555;
-    width: 11%;
-    font-weight: bold;
-}
-
-.tour-city {
-    width: 24%;
-}
-
-.tour-arena {
-    width: 42%;
-}
-
-.tour-btn {
-    max-width: 19%;
+/* Unique hover effects */
+h2:hover {
+    color: #ff5722;
+    text-shadow: 1px 1px 10px rgba(255, 87, 34, 0.3);
 }
